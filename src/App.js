@@ -30,7 +30,18 @@ function App() {
 }
 
 const liftedRemoveHandler = (item) => {
-  
+  for(let i of cart.items) {
+    if(i.id === item.id) {
+      let num = i.numInCart;
+      let price = i.productPrice;
+      let totalPrice = price*num;
+      let items_copy = [...cart.items];
+      let index = items_copy.indexOf(i);
+      items_copy.splice(index,1);
+      setCart((prevstate) => {return {numberOfItems:prevstate.numberOfItems - num, totalPrice:prevstate.totalPrice - totalPrice, items:[...items_copy]}});
+    }
+    break;
+  }
 }
   
   return (

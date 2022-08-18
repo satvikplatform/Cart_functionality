@@ -1,22 +1,18 @@
 import React from 'react'
 
-
-
 const Product = (props) => {
-  
-  const clickHandler = (productPrice) => {
-    props.addclickHandler(productPrice);
-  }
+    const clickHandler = (item) => {
+        props.liftedClickHandler(item)
+    }
   return (
     <div>
-        <h4>{props.item.productName}</h4>
-        <h4>{props.item.productCategory}</h4>
-        <h4>{props.item.productPrice}</h4>
-        <button onClick={() => {clickHandler(props.item.productPrice)}}>Add to cart</button>
-        <button>Remove from cart</button>
+        <h3>{props.item.productName}</h3>
+        <h3>{props.item.productCategory}</h3>
+        <h3>{props.item.productPrice}</h3>
+        <button onClick={() => {clickHandler(props.item)}}>Add to cart</button>
         <hr />
     </div>
   )
 }
 
-export  {Product};
+export default Product

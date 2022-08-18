@@ -4,7 +4,7 @@ import Product from './Product.js';
 
 const Products = (props) => {
 
-    const allProductsArr = all_products.map((item) => {return <Product liftedClickHandler = {props.liftedClickHandler} item={item} key={item.id} />})
+    const allProductsArr = all_products.map((item) => {return <Product liftedClickHandler = {props.liftedClickHandler} liftedRemoveHandler = {props.liftedRemoveHandler} item={item} key={item.id} />})
 
   return (
     <div>

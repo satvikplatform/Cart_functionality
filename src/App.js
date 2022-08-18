@@ -28,12 +28,16 @@ function App() {
     setCart((prevstate) => {return{numberOfItems:prevstate.numberOfItems + 1, totalPrice: prevstate.totalPrice + item.productPrice, items:[...prevstate.items, copy_of_item]}});
    }
 }
+
+const liftedRemoveHandler = (item) => {
+  
+}
   
   return (
     <div>
       <Cart  cart={cart}/>
       <hr />
-      <Products liftedClickHandler = {liftedClickHandler}/>
+      <Products liftedClickHandler = {liftedClickHandler} liftedRemoveHandler = {liftedRemoveHandler}/>
     </div>
   );
 }

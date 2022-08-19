@@ -51,7 +51,6 @@ const liftedRemoveHandler = (item) => {
       <Cart  cart={cart}/>
       <hr />
       <Products liftedClickHandler = {liftedClickHandler} liftedRemoveHandler = {liftedRemoveHandler}/>
-      <h1>hello</h1>
     </div>
   );
 }

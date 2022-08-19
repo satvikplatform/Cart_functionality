@@ -3,7 +3,7 @@ import Cartitem from "./Cartitem.js";
 
 const Cart = (props) => {
 
-  let itemDisplay = props.cart.items.map((value) => {return <Cartitem value={value}/>})
+  let itemDisplay = props.cart.items.map((value) => {return <Cartitem value={value} key={value.id}/>})
 
   return (
     <div style={{backgroundColor:props.cart.numberOfItems > 0? "lightgreen" : "tomato"}}>

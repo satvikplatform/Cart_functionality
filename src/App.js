@@ -37,9 +37,7 @@ const liftedRemoveHandler = (item) => {
       let totalPrice = price*num;
       let items_copy = [...cart.items];
       let index = items_copy.indexOf(i);
-      console.log(items_copy.length);
       items_copy.splice(index,1);
-      console.log(items_copy.length);
       setCart((prevstate) => {return {numberOfItems:prevstate.numberOfItems - num, totalPrice:prevstate.totalPrice - totalPrice, items:[...items_copy]}});
       break;
     }
@@ -52,6 +50,7 @@ const liftedRemoveHandler = (item) => {
       <hr />
       <Products liftedClickHandler = {liftedClickHandler} liftedRemoveHandler = {liftedRemoveHandler}/>
     </div>
+
   );
 }
 

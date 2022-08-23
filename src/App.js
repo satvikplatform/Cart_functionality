@@ -1,17 +1,12 @@
-import React from "react";
-import { useState } from "react";
-import Cart from "./components/Cart";
-import Products from "./components/Products";
+import React from 'react'
+import Persons from './components/Persons'
 
-function App() {
-  
-  
+const App = () => {
   return (
     <div>
-      <h1>hello</h1>
+      <Persons />
     </div>
-
-  );
+  )
 }
 
-export default App;
+export default App

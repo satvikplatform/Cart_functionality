@@ -1,21 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState }  from 'react'
+import { useReducer } from 'react'
 
-const Person = (props) => {
-    const[state, setState] = useState({
-        show: false,
-        buttonMessage :"Show info",
-    });
 
-    const  showHandler = () => {
-      console.log("hello");
-     setState((prevState) => {return {show: prevState.show === false? true : false,  buttonMessage: prevState.buttonMessage === "Show info"?"Hide info":"Show info"}});
+const reducer = (state, action) => {
+    switch(action.type) {
+      case "ADD": return {show: action.payload.show,  btnMessage: action.payload.btnMessage};
+      default: return state;
     }
+};
+const Person = (props) => {
+const[task, dispatch]  = useReducer(reducer, {show:false,btnMessage:"Show info",});
 
+   const btnClickHandler = () => {
+      let value = {show: task.show === false ? true : false, btnMessage: task.btnMessage === "Show info" ? "Hide info" : "Show info"};
+      dispatch({type:"ADD", payload:value});
+   }
 
   return (
     <>
-     <button onClick={showHandler}>{state.buttonMessage}</button>
-     {state.show &&
+     <button onClick={() => {btnClickHandler()}}>{task.btnMessage}</button>
+     {task.show &&
         <div>
             <p>Name:{props.item.name}</p>
             <p>Age:{props.item.age}</p>

@@ -5,7 +5,7 @@ const Product = (props) => {
         props.liftedAddHandler(item);
     }
     const removeHandler = (item) => {
-
+        props.liftedRemoveHandler(item);
     }
     return (
         <div>

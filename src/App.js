@@ -1,10 +1,14 @@
 import React from 'react'
-import Persons from './components/Persons'
+import Cart from './components/Cart'
+import Products from './components/Products'
+
 
 const App = () => {
   return (
     <div>
-      <Persons />
+      <Cart />
+      <hr />
+      <Products />
     </div>
   )
 }
